@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Jaime Zapata",
+      "role": "admin",
+      "email": "admin@credi.com"
+    },
+    {
+      "id": "2",
+      "name": "Estudiante Demo",
+      "role": "client",
+      "email": "user@credi.com"
+    },
+    {
+      "id": "3",
+      "name": "Omar Salcedo",
+      "role": "admin",
+      "email": "adminOmar@credi.com"
+    }
+  ],
+  "requests": [
+    {
+      "id": "a1b2",
+      "userId": "2",
+      "amount": 500000,
+      "installments": 6,
+      "reason": "Compra de materiales",
+      "status": "pending",
+      "date": "2024-11-19"
+    },
+    {
+      "id": "c3d4",
+      "userId": "2",
+      "amount": 200000,
+      "installments": 2,
+      "reason": "Emergencia médica",
+      "status": "approved",
+      "date": "2024-11-10"
+    }
+  ]
+}
