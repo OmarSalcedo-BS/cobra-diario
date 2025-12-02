@@ -21,31 +21,14 @@
     font-weight: 600;
     text-align: center;
     color: #000;
+    margin-bottom: 1rem;
 }
 
+/* Input Container Styles */
 .input-container {
     position: relative;
-}
-
-.input-container input,
-.form button {
-    outline: none;
-    border: 1px solid #e5e7eb;
-    margin: 8px 0;
-    
-}
-
-.input-container input:focus {
-    border-color: #4F46E5;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
-    transition: all 0.2s ease-in-out;
-}
-
-.form button:hover {
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    border-color: #9CA3AF;
-    transform: scale(1.03);
+    margin-bottom: 0.5rem;
+    width: 100%;
 }
 
 .input-container input {
@@ -54,11 +37,21 @@
     padding-right: 3rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    width: 300px;
+    width: 100%;
     border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    outline: none;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
 }
 
+.input-container input:focus {
+    border-color: #4F46E5;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+/* SVG Icon Styles */
 .input-container span {
     display: grid;
     position: absolute;
@@ -68,14 +61,18 @@
     padding-left: 1rem;
     padding-right: 1rem;
     place-content: center;
+    pointer-events: none;
 }
 
 .input-container span svg {
     color: #9CA3AF;
     width: 1rem;
     height: 1rem;
+    flex-shrink: 0;
 }
 
+/* Button Styles */
+.form button,
 .submit {
     display: block;
     padding-top: 0.75rem;
@@ -90,15 +87,42 @@
     width: 100%;
     border-radius: 0.5rem;
     text-transform: uppercase;
+    border: 1px solid #4F46E5;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-top: 1rem;
 }
 
+.submit {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.form button:hover,
+.submit:hover {
+    background-color: #4338ca;
+    border-color: #4338ca;
+    transform: scale(1.03);
+}
+
+/* Signup Link Styles */
 .signup-link {
     color: #6B7280;
     font-size: 0.875rem;
     line-height: 1.25rem;
     text-align: center;
+    margin-top: 1rem;
 }
 
 .signup-link a {
     text-decoration: underline;
+    color: #4F46E5;
+    cursor: pointer;
+}
+
+.signup-link a:hover {
+    color: #4338ca;
 }

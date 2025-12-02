@@ -1,10 +1,12 @@
 import "./Login.css";
+import { Link } from "react-router-dom";
+
 const Login = () => {
   return ( 
     <form className="form">
        <p className="form-title">Inicia sesión en tu cuenta</p>
         <div className="input-container">
-          <input placeholder="Ingresa un correo" type="email"/>
+          <input placeholder="Ingresa un correo" type="email" required/>
           <span>
             <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
@@ -12,7 +14,7 @@ const Login = () => {
           </span>
       </div>
       <div className="input-container">
-          <input placeholder="Ingresa tu contraseña" type="password"/>
+          <input placeholder="Ingresa tu contraseña" type="password" required/>
 
           <span>
             <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,13 +23,13 @@ const Login = () => {
             </svg>
           </span>
         </div>
-         <button className="submit" type="submit">
+         <button className="submit" type="button">
         Iniciar Sesión
       </button>
 
       <p className="signup-link">
-        No tienes una cuenta?
-        <a href="">Registrarse</a>
+        ¿No tienes una cuenta?
+        <Link to="/registro">Registrarse</Link>
       </p>
    </form>
 
