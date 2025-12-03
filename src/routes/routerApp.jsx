@@ -1,5 +1,8 @@
 import Login from "../pages/auth/Login";
 import Registro from "../pages/auth/Registro";
+import PanelAdmin from "../pages/admin/PanelAdmin";
+import PanelSocio from "../pages/socio/PanelSocio";
+import { RutaProtegida } from "../components/RutaProtegida";
 
 export const routerApp = [
   {
@@ -10,4 +13,12 @@ export const routerApp = [
     path: "/registro",
     element: <Registro />,
   },
+  {
+    path: "/admin",
+    element: <PanelAdmin />,
+  },
+  {
+    path: "/socio",
+    element: <PanelSocio />,
+  }
 ];
