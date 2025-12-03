@@ -1,8 +1,8 @@
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { alertaGeneral, alertaRedireccion } from "../../utils/alertas";
-import { useState } from "react";
-import { generarToken} from "../../utils/generadores";
+import { useEffect, useState } from "react";
+import { generarToken } from "../../utils/generadores";
 import { guardarEnLocalStorage } from "../../utils/local-storage";
 import { endopoints } from "../../api/servicios";
 
@@ -11,13 +11,19 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [usuarios, setUsuarios] = useState([]);
 
-
-function getUsuarios() {
+  function getUsuarios() {
     fetch(endopoints.users)
       .then((response) => response.json())
-      .then((data) => setUsuarios(data))
-      .catch((error) => alertaGeneral("Error", error, "error"));
+      .then((data) => {
+        console.log(data);
+        setUsuarios(data);
+      })
+      .catch((error) => console.error("Error fetching users:", error));
   }
+
+  useEffect(() =>{getUsuarios()}, [])
+
+
 
   let redirection = useNavigate();
 
@@ -25,8 +31,7 @@ function getUsuarios() {
     if (email == "correo@gmail.com" && password == "root") {
       let token = generarToken();
       guardarEnLocalStorage("token", token);
-      alertaRedireccion("Bienvenido","success", "/admin", redirection);
-
+      alertaRedireccion("Bienvenido", "success", "/admin", redirection);
     } else {
       alertaGeneral(
         "Error en el inicio de sesión",
