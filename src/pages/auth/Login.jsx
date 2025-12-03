@@ -2,12 +2,22 @@ import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { alertaGeneral, alertaRedireccion } from "../../utils/alertas";
 import { useState } from "react";
-import { generarToken, generarId } from "../../utils/generadores";
+import { generarToken} from "../../utils/generadores";
 import { guardarEnLocalStorage } from "../../utils/local-storage";
+import { endopoints } from "../../api/servicios";
 
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [usuarios, setUsuarios] = useState([]);
+
+
+function getUsuarios() {
+    fetch(endopoints.users)
+      .then((response) => response.json())
+      .then((data) => setUsuarios(data))
+      .catch((error) => alertaGeneral("Error", error, "error"));
+  }
 
   let redirection = useNavigate();
 
@@ -15,8 +25,6 @@ const Login = () => {
     if (email == "correo@gmail.com" && password == "root") {
       let token = generarToken();
       guardarEnLocalStorage("token", token);
-      let id = generarId();
-      guardarEnLocalStorage("id", id);
       alertaRedireccion("Bienvenido","success", "/admin", redirection);
 
     } else {

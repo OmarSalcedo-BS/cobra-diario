@@ -1,7 +1,9 @@
+import Header from '../../components/Header';
+
 function PanelAdmin() {
   return (
     <main>
-        ADMIN
+        <Header />
         <section></section>
     </main>
   );

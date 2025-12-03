@@ -2,7 +2,7 @@ import Login from "../pages/auth/Login";
 import Registro from "../pages/auth/Registro";
 import PanelAdmin from "../pages/admin/PanelAdmin";
 import PanelSocio from "../pages/socio/PanelSocio";
-import { RutaProtegida } from "../components/RutaProtegida";
+import RutaProtegida from "../components/RutaProtegida";
 
 export const routerApp = [
   {
@@ -15,10 +15,10 @@ export const routerApp = [
   },
   {
     path: "/admin",
-    element: <PanelAdmin />,
+    element: <RutaProtegida proteger = {<PanelAdmin />}/>,
   },
   {
     path: "/socio",
-    element: <PanelSocio />,
+    element: <RutaProtegida proteger = {<PanelSocio />} />,
   }
 ];

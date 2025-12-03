@@ -2,21 +2,17 @@
   "users": [
     {
       "id": "1",
-      "name": "Jaime Zapata",
-      "role": "admin",
-      "email": "admin@credi.com"
-    },
-    {
-      "id": "2",
-      "name": "Estudiante Demo",
-      "role": "client",
-      "email": "user@credi.com"
-    },
-    {
-      "id": "3",
       "name": "Omar Salcedo",
       "role": "admin",
-      "email": "adminOmar@credi.com"
+      "email": "adminOmar@credi.com",
+      "password": "admin123"
+    },
+    {
+      "id": "1",
+      "name": "Estudiante Demo",
+      "role": "socio",
+      "email": "user@credi.com",
+      "password": "usuario123"
     }
   ],
   "requests": [
