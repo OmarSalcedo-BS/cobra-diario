@@ -14,7 +14,7 @@ export function alertaRedireccion(title, icon, url, redirection) {
     title,
     html: 'Redirigiendo en <b></b> milisegundos.',
     icon,
-    timer: 5000,
+    timer: 2000,
     timerProgressBar: true,
     didOpen: () => {
       Swal.showLoading();

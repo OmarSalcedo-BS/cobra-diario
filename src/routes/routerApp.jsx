@@ -1,5 +1,5 @@
-import Login from "../pages/Login";
-import Registro from "../pages/Registro";
+import Login from "../pages/auth/Login";
+import Registro from "../pages/auth/Registro";
 
 export const routerApp = [
   {

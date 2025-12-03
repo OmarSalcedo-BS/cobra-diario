@@ -1,6 +1,6 @@
 import './Registro.css';
 import { Link } from 'react-router-dom';
-import { alertaGeneral, alertaRedireccion } from "../utils/alertas";
+import { alertaGeneral, alertaRedireccion } from "../../utils/alertas";
 
 const Registro = () => {
   return (
