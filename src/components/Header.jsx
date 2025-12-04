@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header>
       <span>
-        {iniciales + " " + usuario.name}
+        {iniciales}, {usuario.name}
       </span>
       <br />
       <span> {usuario.role}</span>
