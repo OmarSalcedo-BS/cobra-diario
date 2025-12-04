@@ -54,7 +54,7 @@ const Login = () => {
 
   return (
     <div className="header-section">
-      <div className="titulo">Cobra Diario</div>
+      <div className="titulo">💰 CrediComunidad</div>
       <form className="form">
         <p className="form-title">Inicia sesión en tu cuenta</p>
         <div className="input-container">

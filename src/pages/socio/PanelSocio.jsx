@@ -3,7 +3,6 @@ function PanelSocio() {
   return (
     <main>
       <Header />
-      SOCIO
       <section></section>
     </main>
   );
