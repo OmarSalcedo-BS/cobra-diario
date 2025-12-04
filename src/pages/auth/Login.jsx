@@ -39,9 +39,9 @@ const Login = () => {
       guardarEnLocalStorage("token", token);
       guardarEnLocalStorage("usuario", usuario);
       if(usuario.role === "admin"){
-        alertaRedireccion("Bienvenido", "success", "/admin", redirection);
+        alertaRedireccion("Bienvenido", "success", "/admin/", redirection);
       }else if (usuario.role === "socio"){
-        alertaRedireccion("Bienvenido", "success", "/socio", redirection);
+        alertaRedireccion("Bienvenido", "success", "/socio/", redirection);
       }
     } else {
       alertaGeneral(
@@ -53,9 +53,11 @@ const Login = () => {
   }
 
   return (
-    <div className="header-section">
-      <div className="titulo">💰 CrediComunidad</div>
+    
       <form className="form">
+        <div className="header-section">
+          <div className="titulo">💰 CrediComunidad</div>
+        </div>
         <p className="form-title">Inicia sesión en tu cuenta</p>
         <div className="input-container">
           <input
@@ -119,7 +121,6 @@ const Login = () => {
           <Link to="/registro">Registrarse</Link>
         </p>
       </form>
-    </div>
   );
 };
 

@@ -6,6 +6,9 @@ import { useState } from 'react';
 const Registro = () => {
   return (
     <form className="form">
+      <div className="header-section">
+          <div className="titulo">💰 CrediComunidad</div>
+        </div>
       <p className="form-title">Registrarse</p>
 
       <div className="input-container">
