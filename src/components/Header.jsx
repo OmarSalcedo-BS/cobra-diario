@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header>
       <span>OS, Omar Salcedo</span>
-      <span>Admin</span>
+      <span></span>
       <nav>
         <a href="">Solicitudes</a>
         <button onClick={cerrarSesion}>Cerrar sesión</button>

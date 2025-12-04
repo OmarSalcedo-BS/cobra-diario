@@ -15,23 +15,34 @@ const Login = () => {
     fetch(endopoints.users)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setUsuarios(data);
       })
       .catch((error) => console.error("Error fetching users:", error));
   }
 
-  useEffect(() =>{getUsuarios()}, [])
+  useEffect(() => { getUsuarios() }, [])
 
 
+
+
+
+  function buscarUsuarios() {
+    return usuarios.find((usuario) => usuario.email === email && usuario.password === password);
+  }
 
   let redirection = useNavigate();
-
+  
   function iniciarSesion() {
-    if (email == "correo@gmail.com" && password == "root") {
+    let usuario = buscarUsuarios()
+    if (usuario) {
       let token = generarToken();
       guardarEnLocalStorage("token", token);
-      alertaRedireccion("Bienvenido", "success", "/admin", redirection);
+      guardarEnLocalStorage("usuario", usuario);
+      if(usuario.role === "admin"){
+        alertaRedireccion("Bienvenido", "success", "/admin", redirection);
+      }else if (usuario.role === "socio"){
+        alertaRedireccion("Bienvenido", "success", "/socio", redirection);
+      }
     } else {
       alertaGeneral(
         "Error en el inicio de sesión",

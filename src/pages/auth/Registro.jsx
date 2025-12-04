@@ -1,13 +1,13 @@
 import './Registro.css';
 import { Link } from 'react-router-dom';
-import { alertaGeneral, alertaRedireccion } from "../../utils/alertas";
+
 
 const Registro = () => {
   return (
     <form className="form">
       <p className="form-title">Crear una nueva cuenta</p>
       <div className="input-container">
-        <input placeholder="Ingresa un correo" type="email" />
+        <input onChange={(e) => setEmail(e.target.value)} placeholder="Ingresa un correo" type="email" />
         <span>
           <svg
             stroke="currentColor"
@@ -25,7 +25,7 @@ const Registro = () => {
         </span>
       </div>
       <div className="input-container">
-        <input placeholder="Ingresa tu contraseña" type="password" />
+        <input onChange={(e) => setPassword(e.target.value)} placeholder="Ingresa tu contraseña" type="password" />
         <span>
           <svg
             stroke="currentColor"
@@ -49,7 +49,7 @@ const Registro = () => {
         </span>
       </div>
       <div className="input-container">
-        <input placeholder="Ingresa tu nombre" type="text" />
+        <input onChange={(e) => setNombre(e.target.value)} placeholder="Ingresa tu nombre" type="text" />
         <span>
           <svg
             stroke="currentColor"
@@ -74,7 +74,7 @@ const Registro = () => {
           </svg>
         </span>
       </div>
-      <button className="submit" type="button">
+      <button onClick={registrar} className="submit" type="button">
         Registrarte
       </button>
 
