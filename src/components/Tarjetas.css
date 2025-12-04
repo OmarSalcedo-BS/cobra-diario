@@ -1,4 +1,4 @@
-/* Tarjeta minimalista y natural */
+
 .card-container {
   background: white;
   border-radius: 12px;
@@ -7,6 +7,7 @@
   transition: all 0.2s ease;
   border: 1px solid #e5e7eb;
   height: fit-content;
+  cursor: pointer;
 }
 
 .card-container:hover {
@@ -14,7 +15,7 @@
   transform: translateY(-2px);
 }
 
-/* Variantes de color - tonos naturales */
+
 .card-default {
   border-left: 4px solid #6366f1;
 }
@@ -35,7 +36,6 @@
   border-left: 4px solid #374151;
 }
 
-/* Header de la tarjeta */
 .card-header {
   display: flex;
   align-items: center;
@@ -63,7 +63,7 @@
   margin: 0;
 }
 
-/* Contenido de la tarjeta */
+
 .card-content {
   color: #4b5563;
   line-height: 1.6;
@@ -81,7 +81,7 @@
   margin-right: 6px;
 }
 
-/* Acciones/Botones */
+
 .card-actions {
   display: flex;
   gap: 8px;
@@ -108,7 +108,7 @@
   transform: translateY(0);
 }
 
-/* Variantes de botones */
+
 .card-button.primary {
   background: #6366f1;
   color: white;
@@ -156,7 +156,7 @@
   border-color: #9ca3af;
 }
 
-/* Responsive */
+
 @media (max-width: 640px) {
   .card-container {
     padding: 16px;

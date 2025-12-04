@@ -1,10 +1,10 @@
-.container {
+.cards-grid {
   padding: 24px;
   width: 100%;
   max-width: 100%;
 }
 
-.container h1 {
+.cards-grid h1 {
   margin-bottom: 24px;
   color: #1f2937;
   font-size: 28px;
@@ -18,13 +18,13 @@
   width: 100%;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
-  .container {
+  .cards-grid {
     padding: 16px;
   }
 
-  .container h1 {
+  .cards-grid h1 {
     font-size: 24px;
   }
 
