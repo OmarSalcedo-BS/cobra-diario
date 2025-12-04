@@ -42,6 +42,15 @@
       "reason": "Emergencia de casa",
       "status": "pending",
       "date": "2025-11-10"
+    },
+    {
+      "id": "c3d4",
+      "userId": "1",
+      "amount": 2000000,
+      "installments": 12,
+      "reason": "Emergencia de casa",
+      "status": "rejected",
+      "date": "2025-11-10"
     }
   ]
 }

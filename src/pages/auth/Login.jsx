@@ -4,26 +4,20 @@ import { alertaGeneral, alertaRedireccion } from "../../utils/alertas";
 import { useEffect, useState } from "react";
 import { generarToken } from "../../utils/generadores";
 import { guardarEnLocalStorage } from "../../utils/local-storage";
-import { endopoints } from "../../api/servicios";
+import { api } from "../../api/servicios";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [usuarios, setUsuarios] = useState([]);
 
-  function getUsuarios() {
-    fetch(endopoints.users)
-      .then((response) => response.json())
-      .then((data) => {
-        setUsuarios(data);
-      })
-      .catch((error) => console.error("Error fetching users:", error));
-  }
-
-  useEffect(() => { getUsuarios() }, [])
 
 
-
+  useEffect(() => { 
+    api.getUsuarios().then(data => setUsuarios(data))
+    .catch(error => console.log(error))
+   }, [])
 
 
   function buscarUsuarios() {

@@ -2,6 +2,7 @@ import {eliminarDeLocalStorage} from '../utils/local-storage';
 import {alertaRedireccion} from '../utils/alertas';
 import { useNavigate, Link } from 'react-router-dom';
 import { obtenerDeLocalStorage } from '../utils/local-storage';
+import './Header.css';
 
 
 const Header = () => {
@@ -18,13 +19,13 @@ const Header = () => {
 
 
   return (
-    <header>
-      <span>
-        {iniciales}, {usuario.name}
+    <header className="header">
+      <span className="header-user">
+        <span className="header-user-iniciales">{iniciales}</span> 
+        Hola, {usuario.name}
       </span>
-      <br />
-      <span> {usuario.role}</span>
-      <nav>
+      <span className="header-role"> {usuario.role.toUpperCase()}</span>
+      <nav className="header-nav">
         {
           usuario.role == "admin" ? (
             <div>
@@ -38,7 +39,7 @@ const Header = () => {
             </div>
           )
         }
-        <button onClick={cerrarSesion}>Cerrar sesión</button>
+        <button className="header-button" onClick={cerrarSesion}>Cerrar sesión</button>
       </nav>
     </header>
   );
